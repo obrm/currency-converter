@@ -1,6 +1,6 @@
 {
-	"name": "Currency Converter",
-	"short_name": "A simple currency converter web application built with React. It allows users to convert between two different currencies using real-time exchange rates from the openexchangerate API",
+	"name": "מחשבון המרת מטבע",
+	"short_name": "אתר להמרת מטבע בעברית. ניתן לרשום את הסכום במטבע אחד ולקבל את ערך ההמרה במטבע אחר. ניתן לבצע החלפה בין המטבעות וניקוי הטופס.",
 	"icons": [
 		{
 			"src": "android-chrome-192x192.png",
