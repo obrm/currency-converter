@@ -1,6 +1,6 @@
 {
-	"name": "Exchange Rate Calculator",
-	"short_name": "Exchange Rate Calculator",
+	"name": "Currency Converter",
+	"short_name": "A simple currency converter web application built with React. It allows users to convert between two different currencies using real-time exchange rates from the openexchangerate API",
 	"icons": [
 		{
 			"src": "android-chrome-192x192.png",
