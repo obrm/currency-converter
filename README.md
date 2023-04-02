@@ -2,11 +2,11 @@
 
 ## Description
 
-This is a simple currency converter web application built with React. It allows users to convert between two different currencies using real-time exchange rates from the openexchangerate API.
+This is a React-based web application that enables users to convert between two currencies using real-time exchange rates sourced from the openexchangerate API. Additionally, it includes a Progressive Web App (PWA) for enhanced user experience and convenience.
 
 ## Site
 
-Here is a [link](https://obrm-react-exchange-rate-calculator.netlify.app) to the site hosted on Netlify.
+Here is a [link](https://obrm-currency-converter.netlify.app) to the site hosted on Netlify.
 
 ## Installation
 
