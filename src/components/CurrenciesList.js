@@ -1,14 +1,11 @@
 import React from 'react';
 
-const CurrenciesList = ({ currency, handleChange, currencies }) => {
+const CurrenciesList = ({ currency, handleChange, currencies = [] }) => {
   return (
     <select value={currency} onChange={handleChange}>
-      {currencies.map((currency) => (
-        <option
-          key={currency.value}
-          value={currency.value}
-        >
-          {currency.value}
+      {currencies.map(({ value }) => (
+        <option key={value} value={value}>
+          {value}
         </option>
       ))}
     </select>
