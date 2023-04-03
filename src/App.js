@@ -9,7 +9,7 @@ function App() {
   return (
     <div className='App'>
       {installPromptEvent && <Button className='install-pwa-btn' clickHandler={showInstallPrompt}>להתקנת האפליקציה</Button>}
-      <CurrencyConverter /> 
+      <CurrencyConverter />
     </div>
   );
 }

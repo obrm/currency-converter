@@ -1,22 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 const useInstallPrompt = () => {
   const [installPromptEvent, setInstallPromptEvent] = useState(null);
 
-  useEffect(() => {
-    const handleBeforeInstallPrompt = (e) => {
-      e.preventDefault();
-      setInstallPromptEvent(e);
-    };
-
-    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-
-    return () => {
-      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-    };
-  }, []);
-
-  const showInstallPrompt = () => {
+  const showInstallPrompt = useCallback(() => {
     if (installPromptEvent) {
       // Show the install prompt
       installPromptEvent.prompt();
@@ -32,7 +19,26 @@ const useInstallPrompt = () => {
         setInstallPromptEvent(null);
       });
     }
-  };
+  }, [installPromptEvent]);
+
+  useEffect(() => {
+    const handleBeforeInstallPrompt = (event) => {
+      // Prevent Chrome 76 and later from showing the mini-infobar
+      event.preventDefault();
+      // Save the event so it can be triggered later
+      setInstallPromptEvent(event);
+    };
+
+    showInstallPrompt();
+
+    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+
+    // Clean up the event listener
+    return () => {
+      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+    };
+  }, [showInstallPrompt]);
+
 
   return { showInstallPrompt, installPromptEvent };
 };
