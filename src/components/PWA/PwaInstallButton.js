@@ -8,6 +8,7 @@ const PwaInstallPrompt = () => {
   useEffect(() => {
     const handleBeforeInstallPrompt = (e) => {
       e.preventDefault();
+      console.log('beforeinstallprompt event fired');
       setDeferredPrompt(e);
       setIsVisible(true);
     };
@@ -26,6 +27,7 @@ const PwaInstallPrompt = () => {
   }, []);
 
   const handleInstallClick = () => {
+    console.log('Install button clicked');
     if (deferredPrompt) {
       deferredPrompt.prompt();
 
