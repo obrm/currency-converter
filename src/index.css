@@ -62,7 +62,7 @@ p {
 }
 
 .install-pwa-btn {
-  margin-bottom: 80px;
+  margin: 100px 0 80px;
 }
 
 input[type="number"]:disabled {
