@@ -1,10 +1,10 @@
 import CurrencyConverter from './pages/CurrencyConverter';
-import { PwaInstallButton } from './components';
+import { InstallPWAButton } from './components';
 
 function App() {
   return (
     <div className='App'>
-      <PwaInstallButton />
+      <InstallPWAButton />
       <CurrencyConverter /> 
     </div>
   );
