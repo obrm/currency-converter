@@ -1,23 +1,20 @@
-import { useState, useEffect } from 'react';
-import Button from '../Button';
+import { useEffect } from 'react';
 
 const PwaInstallPrompt = () => {
-  const [deferredPrompt, setDeferredPrompt] = useState(null);
-  const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
     const handleBeforeInstallPrompt = (e) => {
-      e.preventDefault();
-      setDeferredPrompt(e);
-      setIsVisible(true);
+      console.log('beforeinstallprompt event fired');
     };
 
     const handleAppInstalled = () => {
-      setIsVisible(false);
+      console.log('App installed');
     };
 
-    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-    window.addEventListener('appinstalled', handleAppInstalled);
+    // Add a delay before adding the event listeners
+    setTimeout(() => {
+      window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+      window.addEventListener('appinstalled', handleAppInstalled);
+    }, 2000);
 
     return () => {
       window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
@@ -25,31 +22,7 @@ const PwaInstallPrompt = () => {
     };
   }, []);
 
-  const handleInstallClick = () => {
-    if (deferredPrompt) {
-      deferredPrompt.prompt();
-
-      deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('User accepted the install prompt');
-        } else {
-          console.log('User dismissed the install prompt');
-        }
-        setDeferredPrompt(null);
-        setIsVisible(false);
-      });
-    }
-  };
-
-  return (
-    <>
-      {isVisible && (
-        <Button onClick={handleInstallClick} id="install-button" className='install-pwa-btn'>
-          להתקנת האפליקציה
-        </Button>
-      )}
-    </>
-  );
+  return null;
 };
 
 export default PwaInstallPrompt;
