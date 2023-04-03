@@ -5,8 +5,8 @@ import { PwaInstallPrompt } from './components';
 function App() {
   return (
     <div className='App'>
-      <CurrencyConverter /> 
       <PwaInstallPrompt />
+      <CurrencyConverter /> 
     </div>
   );
 }

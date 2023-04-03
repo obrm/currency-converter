@@ -61,6 +61,10 @@ p {
   font-weight: 600;
 }
 
+.install-pwa-btn {
+  margin-bottom: 80px;
+}
+
 input[type="number"]:disabled {
   color: #000;
 }

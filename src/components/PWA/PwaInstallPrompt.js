@@ -44,7 +44,7 @@ const PwaInstallPrompt = () => {
   return (
     <>
       {isVisible && (
-        <Button onClick={handleInstallClick} id="install-button">
+        <Button onClick={handleInstallClick} id="install-button" className='install-pwa-btn'>
           להתקנת האפליקציה
         </Button>
       )}
