@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Button from '../Button';
 
 const PwaInstallPrompt = () => {
   const [deferredPrompt, setDeferredPrompt] = useState(null);
@@ -43,9 +44,9 @@ const PwaInstallPrompt = () => {
   return (
     <>
       {isVisible && (
-        <button onClick={handleInstallClick} id="install-button" style={{ /* Your custom styles */ }}>
-          Install our PWA
-        </button>
+        <Button onClick={handleInstallClick} id="install-button">
+          להתקנת האפליקציה
+        </Button>
       )}
     </>
   );

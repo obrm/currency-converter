@@ -55,7 +55,7 @@ const CurrencyConverter = () => {
           isDisabled={true}
         />
 
-        <Button className={`btn-transparent ${show && 'show'}`} clickHandler={handleClearClick} >
+        <Button className={`btn-transparent ${show && 'show'}`} clickHandler={handleClearClick} id='clear' >
           ניקוי
         </Button>
       </div>
